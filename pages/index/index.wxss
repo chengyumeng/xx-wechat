@@ -1,0 +1,97 @@
+
+ /* *, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+} */
+
+.map {
+  /* height: 400rem; */
+  margin: 0 auto;
+  display: table;
+}
+
+.topic {
+  margin: 0 auto;
+}
+
+.ctopic {
+  margin: 0 auto;
+  display: table;
+  padding: 1rem 1rem;
+  font-family: inherit;
+  font-size: 1rem;
+  text-align: center;
+  color: #e26ae2;
+}
+
+#elapseClock {
+  display: table;
+  margin: 0 auto;
+}
+
+#elapseClock .digit{
+  font-family: digit;
+  font-size: 2rem;
+}
+
+ .dotmap{
+  width:100%;
+  overflow:hidden;
+  background: #fff;
+  
+} 
+
+.dotmap .row {
+    content: "";
+    display: table;
+    clear:both;
+}
+
+
+.dot{
+  float:left;
+  display: block;
+  border-radius:100%;
+  width: 0.2rem;
+  height: 0.2rem;
+  background: #ffffff;
+  margin:0.04rem;
+}
+
+.water{background:#C5EFF7;}
+.north-america{background:#90C695;}
+.south-america{background:#E26A6A;}
+.europe{background:#BE90D4;}
+.africa{background:#FDE3A7;}
+.asia{background:#F4B350;}
+.australia{background:#1E824C;}
+
+.minimal .water{
+  background: transparent;
+}
+
+
+.bubbleWrapper {
+	display: flex;
+	justify-content: flex-end;
+	flex-direction: column; 
+	align-self: flex-end;
+  color: #fff;
+}
+.inlineContainer {
+  display: inline-flex;
+}
+
+.otherBubble {
+	min-width: 2rem;
+	max-width: 100%;
+	padding:  1rem 1rem;
+  margin: 1rem 1rem;
+	background-color: #43d3c5;
+	border-radius: 1rem 1rem 1rem 0;
+	border: 1px solid #43d3c5;
+}
+.other {
+	align-self: flex-start;
+}
