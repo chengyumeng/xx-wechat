@@ -1,0 +1,23 @@
+.bubbleWrapper {
+	display: flex;
+	justify-content: flex-end;
+	flex-direction: column; 
+	align-self: flex-end;
+  color: #fff;
+}
+.inlineContainer {
+  display: inline-flex;
+}
+
+.otherBubble {
+	min-width: 2rem;
+	max-width: 100%;
+	padding:  1rem 1rem;
+  margin: 1rem 1rem;
+	background-color: #43d3c5;
+	border-radius: 1rem 1rem 1rem 0;
+	border: 1px solid #43d3c5;
+}
+.other {
+	align-self: flex-start;
+}

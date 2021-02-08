@@ -1,0 +1,19 @@
+<scroll-view scroll-y='true' style="height:100%;" bindscrolltolower="lower">
+  <view class="info_body" wx:for="{{stories}}" wx:for-index="index" wx:for-item="item">
+ <div class="bubbleWrapper">
+		<div class="inlineContainer">
+			<div class="otherBubble other">
+				{{item.story.message}}
+			</div>
+    </div>
+  </div>
+  </view>
+  <view class="page__bd" style="width:80%">
+    <view class="weui-tabbar">
+      <view class="weui-tabbar__item">
+        <button class="weui-btn" type="primary" bindtap="bindBackToIndex" style="float: left;margin-top: 16px; width:42.5%;left:5%;">返回</button>
+        <button class="weui-btn" type="primary" bindtap="bindViewCreateHole" style="float: right;margin-top: 16px; width:42.5%;right:5%;">写树洞</button>
+      </view>
+    </view>
+  </view>
+</scroll-view>

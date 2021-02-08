@@ -4,18 +4,63 @@ const app = getApp()
 
 Page({
   data: {
-    motto: 'Hello World',
-    userInfo: {},
-    hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    likeCount: 1024,
+    ready: true,
   },
   // 事件处理函数
-  bindViewTap() {
+  bindViewHole() {
     wx.navigateTo({
-      url: '../logs/logs'
+      url: '../hole/hole'
+    })
+  },
+    /**
+   * 用户点击右上角分享
+   */
+   onShareAppMessage: function () {
+    return {
+      title:'我们已经在一起' + this.data.date.dayC + '天啦！',
+    }
+  },
+  onLike: function () {
+    const db = wx.cloud.database()
+    const self = this
+    db.collection('like').add({
+      data: {
+        count: 1,
+        userinfo: app.globalData.userInfo,
+      },
+      success: res => {
+        // 在返回结果中会包含新创建的记录的 _id
+        this.setData({
+          likeCount: self.data.likeCount + 1,
+        })
+        wx.showToast({
+          title: '点赞成功',
+        })
+      },
+      fail: err => {
+        wx.showToast({
+          icon: 'none',
+          title: '点赞失败'
+        })
+      }
     })
   },
   onLoad: function () {
+    wx.cloud.callFunction({
+      name: 'login',
+      data: {},
+      success: res => {
+        app.globalData.openid = res.result.openid
+      },
+      fail: err => {
+        console.error('[云函数] [login] 调用失败', err)
+      }
+    })
+
+    this.loadLikeInfo()
+
     var together = new Date();
     together.setFullYear(2016, 11, 16);
     together.setHours(22);
@@ -28,6 +73,25 @@ Page({
     setInterval(function() {
         self.timeElapse(together);
     },1000)
+},
+loadLikeInfo() {
+  const db = wx.cloud.database()
+  db.collection('like').count({
+    success: res => {
+      this.setData({
+        likeCount: res.total,
+      })
+    },
+    fail: err => {
+      wx.showToast({
+        icon: 'none',
+        title: '穷得开不起树洞了o(╥﹏╥)o'
+      })
+      this.setData({
+        ready: false,
+      })
+    }
+  });
 },
 timeElapse(c) {
     let e = Date();

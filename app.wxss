@@ -1,4 +1,6 @@
 /**app.wxss**/
+@import 'style/weui.wxss';
+
 .container {
   height: 100%;
   display: flex;
@@ -7,9 +9,32 @@
   justify-content: space-between;
   padding: 2rem 0;
   box-sizing: border-box;
-} 
+}
 
-@font-face {
-  font-family: digit;
-  src: url('') format("truetype");
+.like {
+  display: flex;
+  /* align-items: center; */
+  flex-direction: column-reverse;
+  position: relative;
+  left: 2rem;
+}
+
+.like image {
+  height: 2rem;
+  width: 2rem;
+}
+
+.like text {
+  color: brown;
+  font-size:40rpx;
+  position:fixed;
+  padding-left: 3rem;
+  text-align:center;
+}
+
+.weui-tabbar{
+  position:fixed;
+  bottom:0;
+  left:0;
+  right:0;
 }

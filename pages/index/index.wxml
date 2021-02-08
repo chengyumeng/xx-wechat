@@ -2684,3 +2684,16 @@
 </div>
 </div>
 </view>
+<view class="page__bd" wx:if="{{ready}}">
+  <view class="weui-tabbar">
+    <view class="weui-tabbar__item">
+      <view bind:tap="onLike" class="like" wx:if="{{ready}}">
+        <image src="../../assets/heart3.png"></image>
+        <text>{{likeCount}}</text>
+      </view>
+    </view>
+    <view class="weui-tabbar__item">
+      <button class="weui-btn" type="primary" bindtap="bindViewHole" style="float: right;right:10%;">胡杨的树洞</button>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,12 @@
+<view class="weui-cells weui-cells_after-title">
+  <view class="weui-cell">
+    <view class="weui-cell__bd">
+      <textarea bindinput="bindinput" class="weui-textarea" placeholder="树洞将会被以匿名的形式展示" style="height: 10.3rem" value="{{story.message}}"/>
+      <view class="weui-textarea-counter">{{story.message.length}}/140</view>
+    </view>
+  </view>
+  <view class="weui-cell">
+    <button class="weui-btn" type="default" bindtap="bindBackToHole" style="margin-right: 10px;margin-bottom: -14px;">取消</button>
+    <button class="weui-btn" type="primary" bindtap="bindCreateHole">发表</button>
+  </view>
+</view>
