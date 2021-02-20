@@ -3,8 +3,8 @@
   <div class="bubbleWrapper">
 		<div class="inlineContainer">
 			<div class="otherBubble other">
-				他从你们的同类中为你们创造配偶，以便你们依恋她们，并且使你们互相爱悦，互相怜恤。对于能思维的民众，此中确有许多迹象。
-			</div>
+        {{motto}}
+      </div>
     </div>
   </div>
   <!-- https://codepen.io/kristinak/pen/bXqayB   -->
@@ -2684,16 +2684,19 @@
 </div>
 </div>
 </view>
-<view class="page__bd" wx:if="{{ready}}">
-  <view class="weui-tabbar">
-    <view class="weui-tabbar__item">
-      <view bind:tap="onLike" class="like" wx:if="{{ready}}">
-        <image src="../../assets/heart3.png"></image>
-        <text>{{likeCount}}</text>
-      </view>
-    </view>
-    <view class="weui-tabbar__item">
-      <button class="weui-btn" type="primary" bindtap="bindViewHole" style="float: right;right:10%;">胡杨的树洞</button>
-    </view>
+<view class="share-wrap" wx:if="{{visible}}" catchtouchmove="preventDefault">
+  <view class="share-back"></view>
+  <view class="share-container">
+    <view class="close" bindtap="handleClose"></view>
+    <image mode="widthFix" src="{{sharePath}}" class="share-image" />
+    <view class="share-tips">保存图片，叫伙伴们来参与吧</view>
+    <view class="save-btn" bindtap="handlePhotoSaved"></view>
   </view>
 </view>
+<painter style="position: absolute; top: -9999rpx;" palette="{{imgDraw}}" bind:imgOK="onImgOK" />
+
+
+<view bind:tap="onShare" class="like">
+  <button class="weui-btn" type="primary">分享</button>
+</view>
+

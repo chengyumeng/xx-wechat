@@ -13,28 +13,17 @@
 
 .like {
   display: flex;
-  /* align-items: center; */
+  align-items: center;
   flex-direction: column-reverse;
-  position: relative;
-  left: 2rem;
-}
+  /* position: relative; */
+  height: 4rem;
+  background: #fff;
+  bottom: 0;
+  /* top: 0; */
 
-.like image {
-  height: 2rem;
-  width: 2rem;
-}
-
-.like text {
-  color: brown;
-  font-size:40rpx;
   position:fixed;
-  padding-left: 3rem;
-  text-align:center;
-}
-
-.weui-tabbar{
-  position:fixed;
-  bottom:0;
+  bottom:1rem;
   left:0;
   right:0;
+  /* left: 2rem; */
 }
