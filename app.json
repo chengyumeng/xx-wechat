@@ -1,8 +1,6 @@
 {
   "pages": [
-    "pages/index/index",
-    "pages/hole/hole",
-    "pages/hole/create-hole/create"
+    "pages/index/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
