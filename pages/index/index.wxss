@@ -172,9 +172,5 @@
 }
 
 .save-btn {
-  width: 336rpx;
-  height: 96rpx;
   margin: 0 auto 94rpx;
-  background: url('https://686f-home-3g3doj805bee60c5-1304965424.tcb.qcloud.la/20190506save-btn.png?sign=2cf9d86a0a72fc028ed3e209a7d45910&t=1613835083') center center;
-  background-size: 100% 100%;
 }
