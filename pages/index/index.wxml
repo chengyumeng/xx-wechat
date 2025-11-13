@@ -2685,20 +2685,3 @@
 </div>
 </view>
 
-
-<view class="share-wrap" wx:if="{{visible}}" catchtouchmove="preventDefault">
-  <view class="share-back"></view>
-  <view class="share-container">
-    <view class="close" bindtap="handleClose"></view>
-    <image mode="widthFix" src="{{sharePath}}" class="share-image" />
-    <view class="share-tips">保存海报，分享到朋友圈获得祝福吧</view>
-    <button class="weui-btn save-btn" type="primary" bindtap="handlePhotoSaved">保存</button>
-  </view>
-</view>
-<painter style="position: absolute; top: -9999rpx;" palette="{{imgDraw}}" bind:imgOK="onImgOK" />
-
-
-<view bind:tap="onShare" class="like">
-  <button class="weui-btn" type="primary">分享</button>
-</view>
-
